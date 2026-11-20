@@ -1,0 +1,16 @@
+@use "./variables.scss" as *;
+
+body {
+  --bodyFont: "Segoe UI", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+  --headerFont: "Segoe UI", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+  --codeFont: "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+}
+article { line-height: 1.9; }
+article p, article li { font-size: 1rem; }
+article h2 { margin-top: 2rem; }
+article h3 { margin-top: 1.5rem; }
+article a { text-underline-offset: 0.2em; }
+.page-title { font-weight: 650; letter-spacing: -0.035em; }
+.sidebar .backlinks { font-size: 0.9rem; }
+article table { width: 100%; font-size: 0.95rem; }
+article blockquote { border-radius: 0 6px 6px 0; }
