@@ -3,7 +3,7 @@ import YAML from 'yaml';
 const config = YAML.parse(fs.readFileSync('quartz.config.default.yaml','utf8'));
 Object.assign(config.configuration, {
   pageTitle: "azusa's wiki", pageTitleSuffix: " · azusa's wiki",
-  locale: 'zh-CN', baseUrl: 'azusas-wiki.azusa122627.chatgpt.site',
+  locale: 'zh-CN', baseUrl: 'wiki.azusaaa.com',
   analytics: null, publishAssets: 'referenced',
   ignorePatterns: ['private', '.obsidian', '.git', 'Inbox', 'Sources', 'Archive', 'Templates', 'Home.md', 'README.md']
 });

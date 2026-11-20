@@ -6,7 +6,7 @@ configuration:
   prefetch: viewport
   analytics: null
   locale: zh-CN
-  baseUrl: azusas-wiki.azusa122627.chatgpt.site
+  baseUrl: wiki.azusaaa.com
   ignorePatterns:
     - private
     - .obsidian
