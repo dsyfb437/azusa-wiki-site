@@ -13,6 +13,8 @@ configuration:
     - .git
     - Inbox
     - Sources
+    - Meta
+    - CLAUDE.md
     - Archive
     - Templates
     - Home.md

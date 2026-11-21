@@ -15,7 +15,7 @@ Linux 文件可以由 Windows 图形编辑器打开。编辑器运行在 Windows
 Windows 中可以通过下面的地址访问某个发行版：
 
 ```text
-\wsl.localhost\Ubuntu-Dev\home\用户名\项目
+\\wsl.localhost\Ubuntu-Dev\home\用户名\项目
 ```
 
 把发行版名称和用户名替换成自己的即可。对任意实际文件，也可以在 WSL 中用 `wslpath -w 路径` 得到 Windows 可访问的表示。

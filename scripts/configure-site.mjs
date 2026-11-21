@@ -5,7 +5,7 @@ Object.assign(config.configuration, {
   pageTitle: "azusa's wiki", pageTitleSuffix: " · azusa's wiki",
   locale: 'zh-CN', baseUrl: 'wiki.azusaaa.com',
   analytics: null, publishAssets: 'referenced',
-  ignorePatterns: ['private', '.obsidian', '.git', 'Inbox', 'Sources', 'Archive', 'Templates', 'Home.md', 'README.md']
+  ignorePatterns: ['private', '.obsidian', '.git', 'Inbox', 'Sources', 'Meta', 'CLAUDE.md', 'Archive', 'Templates', 'Home.md', 'README.md']
 });
 config.configuration.theme.fontOrigin='local';
 config.configuration.theme.cdnCaching=false;
