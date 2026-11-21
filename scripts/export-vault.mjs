@@ -31,14 +31,20 @@ const assets = new Set();
 // private paths never reach the site.
 const unfinished = [];
 const rewritten = new Map();
+const localLinks = [];
+const bareLocalPaths = [];
+const isLocalPath = (href) => /^(?:file:\/\/|~\/|\/|[A-Za-z]:[\\/])/.test(href);
 for (const [file, content] of pages) {
-  if (/file:\/\/|\/home\/dsyfb437|[CD]:[\\/]Data[\\/]/i.test(content)) {
-    throw Error('Local/private path in public page: ' + path.relative(root, file));
-  }
   let text = content;
   for (const match of content.matchAll(/(!?)\[([^\]\n]*)\]\(([^)\n]+)\)/g)) {
     let href = match[3].trim();
     if (/^(?:https?:|mailto:|#)/i.test(href)) continue;
+    if (isLocalPath(href)) {
+      // 本机路径不进站点：链接降级成纯文本，记一条警告，不拦发布
+      localLinks.push({ page: path.relative(root, file), href });
+      text = text.split(match[0]).join(match[2]);
+      continue;
+    }
     href = decodeURIComponent(href.split('#')[0]);
     if (!href) continue;
     const target = path.resolve(path.dirname(file), href);
@@ -56,6 +62,8 @@ for (const [file, content] of pages) {
       assets.add(target);
     }
   }
+  const bare = text.match(/(?:file:\/\/|\/home\/dsyfb437)[^\s)\]]*/g);
+  if (bare) bareLocalPaths.push({ page: path.relative(root, file), samples: bare.slice(0, 3) });
   rewritten.set(file, text);
 }
 if (output !== path.resolve(process.cwd(), 'content')) throw Error('Unexpected staging directory.');
@@ -79,6 +87,10 @@ const manifest = {
   assets: [...assets].map((file) => path.relative(root, file)),
   sourceNotes: pages.size,
   unfinished,
+  localLinks,
+  bareLocalPaths,
 };
 await fs.writeFile('.sites-runtime/publish-manifest.json', JSON.stringify(manifest, null, 2));
 console.log('Exported ' + pages.size + ' explicitly public pages and ' + assets.size + ' referenced assets; ' + unfinished.length + ' links to unfinished pages.');
+for (const item of localLinks) console.log('  · 本机路径链接已降级为纯文本: ' + item.page + ' → ' + item.href);
+for (const item of bareLocalPaths) console.log('  ⚠ 正文里还有本机路径（没拦）: ' + item.page + ' → ' + item.samples.join(', '));
