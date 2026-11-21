@@ -33,4 +33,4 @@ Windows 中可以通过下面的地址访问某个发行版：
 ## 来源
 
 - [Microsoft：跨 Windows 与 Linux 文件系统工作](https://learn.microsoft.com/en-us/windows/wsl/filesystems)
-- [计算机与工程目录](../Maps/计算机与工程.md)
+- [计算机与工程目录](计算机与工程.md)
