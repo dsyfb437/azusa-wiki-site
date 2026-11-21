@@ -1,0 +1,58 @@
+name: Deploy wiki
+
+# 构建并发布 wiki.azusaaa.com。
+# 内容由本地 `wiki deploy` 导出到 content/ 后提交进来，这里不再接触私有 vault。
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # 页面上的“最后修改时间”来自 git 历史，浅克隆会让它们全变成构建时间
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # .openai/vault-local.json 只在本地存在，CI 上会跳过导出，直接构建 content/
+      - name: Build
+        run: node scripts/build-wiki.mjs
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
