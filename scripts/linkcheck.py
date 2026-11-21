@@ -1,4 +1,4 @@
-"""List broken relative Markdown links in the vault (Archive excluded)."""
+"""List broken relative Markdown links in the published set (index.md, Notes/, Maps/)."""
 import re
 import sys
 from pathlib import Path
@@ -9,7 +9,9 @@ link = re.compile(r"!?\[[^\]\n]*\]\(([^)\n]+)\)")
 broken = 0
 for md in sorted(root.rglob("*.md")):
     rel = md.relative_to(root)
-    if rel.parts[0] in {"Archive", ".git", ".obsidian"}:
+    # 只检查会被导出到站点的那部分，私有页面的坏链接不该拦住发布
+    exported = rel.as_posix() == "index.md" or (len(rel.parts) > 1 and rel.parts[0] in {"Notes", "Maps"})
+    if not exported:
         continue
     for n, line in enumerate(md.read_text(encoding="utf-8").splitlines(), 1):
         for m in link.finditer(line):
