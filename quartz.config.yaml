@@ -49,6 +49,7 @@ configuration:
         textHighlight: "#b3aa0288"
   links:
     markdownLinkResolution: shortest
+    disableBrokenWikilinks: true
   contentIndex:
     enableSiteMap: true
     enableRSS: true
