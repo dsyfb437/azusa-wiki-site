@@ -347,6 +347,14 @@ export function renderPage(
   }
 
   // set componentData.tree to the edited html that has transclusions rendered
+  const lead = root.children.find((node) => node.type === "element")
+  if (lead?.tagName === "h1") {
+    const label = lead.children.filter((node) => node.type !== "element" || node.properties.role !== "anchor")
+    if (label.length === 1 && label[0].type === "text" &&
+        label[0].value.trim() === componentData.fileData.frontmatter?.title) {
+      lead.properties["data-repeats-title"] = true
+    }
+  }
   componentData.tree = root
 
   const {

@@ -28,25 +28,25 @@ configuration:
       code: Cascadia Code
     colors:
       lightMode:
-        light: "#fbfaf7"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4f4c5c"
-        dark: "#252431"
-        secondary: "#7157ad"
-        tertiary: "#8575a5"
-        highlight: rgba(113,87,173,0.09)
-        textHighlight: "#fff23688"
+        light: "#faf8f3"
+        lightgray: "#dcd6cc"
+        gray: "#766f67"
+        darkgray: "#45403b"
+        dark: "#292520"
+        secondary: "#563f35"
+        tertiary: "#a55137"
+        highlight: rgba(154,76,49,0.08)
+        textHighlight: "#e6b38270"
       darkMode:
-        light: "#1d1b25"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#c6c0d1"
-        dark: "#eeecf3"
-        secondary: "#b5a0e0"
-        tertiary: "#9e8bba"
-        highlight: rgba(181,160,224,0.11)
-        textHighlight: "#b3aa0288"
+        light: "#221f1c"
+        lightgray: "#47403a"
+        gray: "#a69d92"
+        darkgray: "#dcd5c9"
+        dark: "#f5eee5"
+        secondary: "#e6cbb9"
+        tertiary: "#eea184"
+        highlight: rgba(232,157,127,0.11)
+        textHighlight: "#98614680"
   links:
     markdownLinkResolution: shortest
     disableBrokenWikilinks: true

@@ -1,16 +1,164 @@
 @use "./variables.scss" as *;
 
 body {
-  --bodyFont: "Segoe UI", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
-  --headerFont: "Segoe UI", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
-  --codeFont: "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  --headerFont: "Baskervville", Georgia, "Noto Serif SC", "Songti SC", "STSong", SimSun, serif;
+  --bodyFont: "Source Sans 3", "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --codeFont: "Cascadia Code", Consolas, monospace;
+  --surface: color-mix(in srgb, var(--light) 93%, var(--lightgray));
+  --rule: 1px solid var(--lightgray);
 }
-article { line-height: 1.9; }
-article p, article li { font-size: 1rem; }
-article h2 { margin-top: 2rem; }
-article h3 { margin-top: 1.5rem; }
-article a { text-underline-offset: 0.2em; }
-.page-title { font-weight: 650; letter-spacing: -0.035em; }
-.sidebar .backlinks { font-size: 0.9rem; }
-article table { width: 100%; font-size: 0.95rem; }
-article blockquote { border-radius: 0 6px 6px 0; }
+
+.page-title a {
+  font: italic 500 1.5rem/1.2 var(--headerFont);
+  color: var(--dark);
+  letter-spacing: -0.04em;
+}
+
+.page-title a::before {
+  content: "";
+  display: inline-block;
+  width: 0.42em;
+  height: 0.42em;
+  margin-inline-end: 0.45em;
+  border: 1px solid var(--tertiary);
+  background: var(--tertiary);
+  transform: rotate(45deg);
+}
+
+.page .article-title {
+  color: var(--dark);
+  font: 500 clamp(2rem, 3vw, 3.1rem)/1.28 var(--headerFont);
+  letter-spacing: 0.012em;
+  margin-block: 0.4em 0.25em;
+  text-wrap: balance;
+}
+
+.page .page-header {
+  padding-bottom: 1rem;
+  border-bottom: var(--rule);
+}
+
+// Keep the original fragment target when the page header already supplies the title.
+.center:has(> .page-header .article-title) > article .markdown-preview-view > h1[data-repeats-title]:first-child {
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+}
+
+.page article {
+  line-height: 1.9;
+
+  h2, h3 { color: var(--dark); font-family: var(--headerFont); font-weight: 600; }
+  h2 { margin-block: 2.2rem 0.65rem; font-size: 1.55rem; }
+  h3 { margin-block: 1.6rem 0.5rem; font-size: 1.18rem; }
+
+  a.internal:not([role="anchor"], .tag-link, :has(img)) {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--tertiary) 55%, transparent);
+    text-underline-offset: 0.23em;
+    &:hover { color: var(--tertiary); text-decoration-color: currentColor; }
+  }
+  table { width: 100%; font-size: 0.95rem; }
+  th { background: var(--surface); }
+  blockquote:not(.callout) { border-inline-start-color: var(--tertiary); }
+}
+
+.sidebar {
+  .page-title { margin-bottom: 0.15rem; }
+  .search-button, .graph-outer {
+    border: var(--rule);
+    border-radius: 0.45rem;
+    background-color: var(--surface);
+  }
+  .toc, .backlinks, .explorer { font-size: 0.94rem; }
+}
+
+:focus-visible { outline: 2px solid var(--tertiary); outline-offset: 3px; }
+
+@media (min-width: 801px) {
+  .page > #quartz-body {
+    .sidebar { padding-top: 3.35rem; }
+    .page-header { margin-top: 3.35rem; }
+    .sidebar.left { border-inline-end: var(--rule); }
+  }
+}
+
+@media (min-width: 1201px) {
+  .page[data-frame="default"] > #quartz-body {
+    grid-template-columns: minmax(12rem, 14rem) minmax(0, 43rem) minmax(12rem, 14rem);
+    column-gap: clamp(1.75rem, 3.5vw, 4rem);
+    justify-content: center;
+    padding-inline: 1.5rem;
+    .sidebar { padding-inline: 0; }
+    .sidebar.left { padding-inline-end: 1.7rem; }
+  }
+}
+
+body[data-slug="index"] .center {
+  > .page-header {
+    padding: 0.75rem 0 1.4rem;
+    border-bottom: var(--rule);
+    .article-title {
+      font-size: clamp(2.3rem, 3.8vw, 3.5rem);
+      line-height: 1.15;
+      letter-spacing: 0.015em;
+      margin: 0;
+    }
+    .note-properties, .content-meta { display: none; }
+  }
+
+  > article .markdown-preview-view {
+    > p:first-child {
+      max-width: 28em;
+      margin-block: 1.5rem 0.7rem;
+      font: 450 clamp(1.15rem, 1.7vw, 1.48rem)/1.75 var(--headerFont);
+      color: var(--dark);
+      text-wrap: balance;
+    }
+    > h2 {
+      margin-top: 2.1rem;
+      font-weight: 550;
+      letter-spacing: 0.04em;
+    }
+    > h2 + ul { list-style: none; padding: 0; }
+    > h2 + ul > li {
+      margin: 0;
+      padding-block: 0.58rem;
+      border-bottom: var(--rule);
+    }
+    > h2:first-of-type + ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 1.8rem;
+      > li {
+        padding: 0;
+        a.internal {
+          display: block;
+          padding: 0.65rem 0;
+          font: 550 1.07rem/1.7 var(--headerFont);
+          text-decoration: none;
+          &:hover { color: var(--tertiary); text-decoration: underline; }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .page-title a { font-size: 1.24rem; }
+  .page > #quartz-body .sidebar.left {
+    flex-wrap: wrap;
+    padding-block: 1rem;
+  }
+  .page .page-header { margin-block-start: 0.75rem; }
+}
+
+@media (max-width: 530px) {
+  body[data-slug="index"] .center > article .markdown-preview-view > h2:first-of-type + ul {
+    grid-template-columns: 1fr;
+    > li { padding: 0; }
+  }
+}
