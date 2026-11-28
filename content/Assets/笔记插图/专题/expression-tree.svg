@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="264" viewBox="0 0 480 264" role="img" aria-labelledby="title desc">
+  <title id="title">算式 18 − 3 × 4 的语法树</title>
+  <desc id="desc">根是减法。左子树只有数字 18，右子树是乘法，包含 3 和 4。先把右子树算成 12，再计算 18 减 12。</desc>
+  <rect width="480" height="264" rx="8" fill="#faf7ef"/>
+  <g stroke="#71695e" stroke-width="2.6" fill="none">
+    <path d="M217 64 130 111m130-47 58 46m1 35-57 45m84-45 54 45"/>
+  </g>
+  <g fill="#e7efea" stroke="#39646a" stroke-width="2.2">
+    <circle cx="239" cy="54" r="25"/><circle cx="331" cy="130" r="23"/>
+  </g>
+  <g fill="#fffdfa" stroke="#aa7456" stroke-width="2">
+    <rect x="83" y="107" width="64" height="43" rx="6"/>
+    <rect x="225" y="188" width="55" height="43" rx="6"/><rect x="385" y="188" width="55" height="43" rx="6"/>
+  </g>
+  <g text-anchor="middle" font-family="Georgia, serif" fill="#342e29">
+    <g font-size="33"><text x="239" y="64">−</text><text x="331" y="140">×</text></g>
+    <g font-size="25"><text x="115" y="137">18</text><text x="253" y="217">3</text><text x="412" y="217">4</text></g>
+  </g>
+</svg>

@@ -362,6 +362,23 @@ describe("links built-in", () => {
     assert.strictEqual(els[1].properties.src, "../../media/a.mp4")
   })
 
+  test("parent-relative figures keep their path under shortest-link resolution", () => {
+    const { els } = run(
+      [
+        {
+          type: "element",
+          tagName: "img",
+          properties: { src: "../../Assets/课程/figure.svg", alt: "图解" },
+          children: [],
+        },
+      ],
+      "notes/课程/章",
+      { markdownLinkResolution: "shortest" },
+      ["notes/课程/章", "assets/课程/figure.svg", "assets/other/figure.svg"],
+    )
+    assert.strictEqual(els[0].properties.src, "../../assets/课程/figure.svg")
+  })
+
   // Obsidian 1.15.0 (remark-obsidian 2.2.1's triage, re-probed): a path that is not valid
   // percent-encoding names no file, so the link is external; `x:y` has a scheme, `../x:y` doesn't
   test("links Obsidian reads as external", () => {

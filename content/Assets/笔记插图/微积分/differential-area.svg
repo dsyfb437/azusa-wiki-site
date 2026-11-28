@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="291" viewBox="0 0 540 291" role="img" aria-labelledby="t d"><title id="t">正方形面积增量里的微分</title><desc id="d">边长由 x₀ 增至 x₀+h，多出两条面积各为 x₀h 的边带和一块面积为 h² 的角块。</desc><rect width="540" height="291" rx="8" fill="#fcf9f3"/><g font-family="system-ui, PingFang SC, Microsoft YaHei, sans-serif"><rect x="62.00" y="76.00" width="170.00" height="170.00" fill="#e9e4da" stroke="#665f58"/>
+<rect x="62.00" y="32.00" width="170.00" height="44.00" fill="#d9e7e9" stroke="#275d76"/>
+<rect x="232.00" y="76.00" width="44.00" height="170.00" fill="#d9e7e9" stroke="#275d76"/>
+<rect x="232.00" y="32.00" width="44.00" height="44.00" fill="#f2d8be" stroke="#a34430"/>
+<text x="147.0" y="166.0" font-size="23" fill="#665f58" text-anchor="middle">x₀²</text>
+<text x="147.0" y="60.0" font-size="19" fill="#275d76" text-anchor="middle">x₀h</text>
+<text x="254.0" y="166.0" font-size="18" fill="#275d76" text-anchor="middle">x₀h</text>
+<text x="254.0" y="60.0" font-size="17" fill="#a34430" text-anchor="middle">h²</text>
+<text x="147.0" y="271" font-size="19" fill="#665f58" text-anchor="middle">x₀</text>
+<text x="254.0" y="271" font-size="18" fill="#a34430" text-anchor="middle">h</text>
+<text x="318" y="87" font-size="20" fill="#275d76" text-anchor="start">增加的两条边带</text>
+<text x="318" y="120" font-size="22" fill="#275d76" text-anchor="start">2x₀h</text>
+<text x="318" y="177" font-size="20" fill="#a34430" text-anchor="start">增加的角块</text>
+<text x="318" y="211" font-size="22" fill="#a34430" text-anchor="start">h²</text></g></svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="231" viewBox="0 0 440 231" role="img" aria-labelledby="title desc">
+<title id="title">调用进入时的指向</title>
+<desc id="desc">形参 left 指向 a，right 指向 b。整数 4 和 9 仍保存在调用者的两个对象中。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#625b54" stroke-width="1.8"/></marker></defs>
+<rect x="1" y="1" width="438" height="229" rx="9" fill="#fbf8f1" stroke="#c6b9a7"/>
+<text x="21" y="32" font-family="Segoe UI,Microsoft YaHei,PingFang SC,sans-serif" font-size="20" fill="#302b27" text-anchor="start" font-weight="600">exchange(&amp;a, &amp;b) 进入函数时</text>
+<text x="36" y="69" font-family="Segoe UI,Microsoft YaHei,PingFang SC,sans-serif" font-size="16" fill="#625b54" text-anchor="start">函数形参</text>
+<text x="270" y="69" font-family="Segoe UI,Microsoft YaHei,PingFang SC,sans-serif" font-size="16" fill="#625b54" text-anchor="start">调用者的对象</text>
+<rect x="32" y="83" width="103" height="39" rx="4" fill="#fffdf8" stroke="#c6b9a7"/>
+<text x="83.5" y="108.5" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#302b27" text-anchor="middle" font-weight="600">left</text>
+<rect x="268" y="83" width="130" height="39" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="333.0" y="108.5" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">a = 4</text>
+<path d="M140 102 H258" fill="none" stroke="#625b54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="32" y="136" width="103" height="39" rx="4" fill="#fffdf8" stroke="#c6b9a7"/>
+<text x="83.5" y="161.5" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#302b27" text-anchor="middle" font-weight="600">right</text>
+<rect x="268" y="136" width="130" height="39" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="333.0" y="161.5" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">b = 9</text>
+<path d="M140 155 H258" fill="none" stroke="#625b54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="32" y="207" font-family="Segoe UI,Microsoft YaHei,PingFang SC,sans-serif" font-size="17" fill="#302b27" text-anchor="start">*left 读写 a，*right 读写 b。</text>
+</svg>

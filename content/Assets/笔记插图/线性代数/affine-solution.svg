@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="322" viewBox="0 0 480 322" role="img" aria-labelledby="title desc">
+<title id="title">非齐次方程的解集是齐次解集的平移</title>
+<desc id="desc">直线 x+y=0 经过原点。每个解向右移动 2 个单位后落到 x+y=2 上，两条直线有相同的方向。</desc>
+<defs><marker id="at" markerUnits="userSpaceOnUse" viewBox="0 0 12 10" refX="11" refY="5" markerWidth="12" markerHeight="10" orient="auto"><path d="M0 0 L12 5 L0 10 z" fill="#32626a"/></marker><marker id="ar" markerUnits="userSpaceOnUse" viewBox="0 0 12 10" refX="11" refY="5" markerWidth="12" markerHeight="10" orient="auto"><path d="M0 0 L12 5 L0 10 z" fill="#a1462e"/></marker><marker id="ak" markerUnits="userSpaceOnUse" viewBox="0 0 12 10" refX="11" refY="5" markerWidth="12" markerHeight="10" orient="auto"><path d="M0 0 L12 5 L0 10 z" fill="#302b25"/></marker><marker id="ag" markerUnits="userSpaceOnUse" viewBox="0 0 12 10" refX="11" refY="5" markerWidth="12" markerHeight="10" orient="auto"><path d="M0 0 L12 5 L0 10 z" fill="#82796e"/></marker></defs>
+<rect width="480" height="322" rx="12" fill="#faf6eb"/>
+<g font-family="system-ui, Microsoft YaHei, PingFang SC, sans-serif" stroke-linejoin="round" stroke-linecap="round">
+<line x1="40" y1="172" x2="428" y2="172" stroke="#82796e" stroke-width="1.5" marker-end="url(#ag)"/>
+<line x1="170" y1="273" x2="170" y2="24" stroke="#82796e" stroke-width="1.5" marker-end="url(#ag)"/>
+<text x="436" y="178" text-anchor="start" font-size="18" font-weight="450" fill="#302b25">x</text>
+<text x="179" y="30" text-anchor="start" font-size="18" font-weight="450" fill="#302b25">y</text>
+<line x1="53" y1="55" x2="264" y2="266" stroke="#32626a" stroke-width="3.3"/>
+<line x1="142" y1="40" x2="359" y2="257" stroke="#a1462e" stroke-width="3.3"/>
+<text x="28" y="39" text-anchor="start" font-size="18" font-weight="450" fill="#32626a">x + y = 0</text>
+<text x="207" y="55" text-anchor="start" font-size="18" font-weight="450" fill="#a1462e">x + y = 2</text>
+<circle cx="170" cy="172" r="4" fill="#32626a"/>
+<line x1="171" y1="172" x2="274" y2="172" stroke="#302b25" stroke-width="3" marker-end="url(#ak)"/>
+<circle cx="274" cy="172" r="4" fill="#a1462e"/>
+<text x="149" y="194" text-anchor="start" font-size="18" font-weight="450" fill="#32626a">O</text>
+<text x="286" y="169" text-anchor="start" font-size="18" font-weight="450" fill="#a1462e">(2, 0)</text>
+<line x1="118" y1="120" x2="221" y2="120" stroke="#302b25" stroke-width="1.6" stroke-dasharray="4 5" marker-end="url(#ak)"/>
+<circle cx="118" cy="120" r="3.5" fill="#32626a"/>
+<circle cx="222" cy="120" r="3.5" fill="#a1462e"/>
+<text x="28" y="301" text-anchor="start" font-size="18" font-weight="450" fill="#302b25">两根水平箭头都表示平移 (2, 0)。</text>
+</g>
+</svg>

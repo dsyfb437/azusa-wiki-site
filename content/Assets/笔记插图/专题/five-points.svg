@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="288" viewBox="0 0 480 288" role="img" aria-labelledby="title desc">
+  <title id="title">三角形凸包内有两个点时怎样取凸四边形</title>
+  <desc id="desc">D、E 在三角形 ABC 内。延长 DE，A、B 都在下方，C 单独在上方。沿 A、B、E、D 连接得到着色的凸四边形。</desc>
+  <rect width="480" height="288" rx="8" fill="#faf7ef"/>
+  <path d="M62 240 246 38 417 240Z" fill="none" stroke="#817b70" stroke-width="2"/>
+  <path d="M62 240 417 240 284 127 180 146Z" fill="#dce9e7" stroke="#356772" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M31 173.22 372 110.92" fill="none" stroke="#a74b32" stroke-width="2.4" stroke-dasharray="7 5"/>
+  <g fill="#264e58"><circle cx="62" cy="240" r="4.6"/><circle cx="417" cy="240" r="4.6"/><circle cx="180" cy="146" r="4.6"/><circle cx="284" cy="127" r="4.6"/></g>
+  <circle cx="246" cy="38" r="4.6" fill="#62574d"/>
+  <g font-family="Georgia, serif" font-size="21" fill="#272922">
+    <text x="44" y="266">A</text><text x="420" y="266">B</text><text x="258" y="34">C</text>
+    <text x="165" y="135">D</text><text x="275" y="115">E</text>
+  </g>
+</svg>

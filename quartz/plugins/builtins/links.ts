@@ -88,7 +88,13 @@ export const Links: QuartzTransformerPlugin<LinksConfig> = (userOpts) => {
               : fileSlug
             const rebase = targets.size > 0 || pathSlug !== fileSlug
             const resolveLink = (raw: string): RelativeURL => {
-              const rel = transformLink(pathSlug, raw, transformOptions)
+              // A parent-directory link already identifies its target relative to the author's file.
+              const relative = opts.markdownLinkResolution === "shortest" && raw.startsWith("../")
+              const rel = transformLink(
+                pathSlug,
+                raw,
+                relative ? { ...transformOptions, strategy: "relative" } : transformOptions,
+              )
               if (!rebase) return rel
               const hash = rel.indexOf("#")
               const anchor = hash === -1 ? "" : rel.slice(hash)

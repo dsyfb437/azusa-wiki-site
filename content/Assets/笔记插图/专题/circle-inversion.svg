@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="348" viewBox="0 0 480 348" role="img" aria-labelledby="title desc">
+  <title id="title">过原点的圆在单位反演下变成直线</title>
+  <desc id="desc">圆心为 (1,0)，圆上两点 P=(1,1)、Q=(2,0) 沿各自从原点出发的射线，映到横坐标均为二分之一的 P′ 和 Q′。空心圈标出没有像点的原点。</desc>
+  <rect width="480" height="348" rx="8" fill="#faf7ef"/>
+  <g fill="none" stroke-linecap="round">
+    <g stroke="#a49b8b" stroke-width="1.5">
+      <path d="M36 175H432m-7-4 7 4-7 4M100 324V20m-4 7 4-7 4 7"/>
+      <path d="M229 170v10"/>
+    </g>
+    <circle cx="229" cy="175" r="129" stroke="#326674" stroke-width="3"/>
+    <path d="M100 175 245 30" stroke="#665b50" stroke-width="1.8" stroke-dasharray="6 5"/>
+    <path d="M164.5 26V318" stroke="#aa4d32" stroke-width="3"/>
+  </g>
+  <g fill="#326674"><circle cx="229" cy="46" r="5"/><circle cx="358" cy="175" r="5"/></g>
+  <g fill="#aa4d32"><rect x="160" y="106" width="9" height="9"/><rect x="160" y="170.5" width="9" height="9"/></g>
+  <circle cx="100" cy="175" r="5" fill="#faf7ef" stroke="#39332e" stroke-width="2"/>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#39332e">
+    <text x="73" y="198">O</text><text x="438" y="181">x</text><text x="81" y="27">y</text>
+    <text x="239" y="41" fill="#20525f">P (1, 1)</text><text x="365" y="163" fill="#20525f">Q (2, 0)</text>
+    <text x="132" y="103" fill="#8f3926">P′</text><text x="177" y="198" fill="#8f3926">Q′</text>
+    <text x="224" y="199">1</text><text x="113" y="335" fill="#8f3926">x′ = 1/2</text>
+  </g>
+</svg>

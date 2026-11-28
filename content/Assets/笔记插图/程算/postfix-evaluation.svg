@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="343" viewBox="0 0 440 343" role="img" aria-labelledby="title desc">
+<title id="title">数值栈处理后缀表达式</title>
+<desc id="desc">输入 2 3 4 + * 5 −。加号使栈从 2、3、4 变成 2、7；乘号使栈变成 14；其后压入 5，减法算 14 减 5 得 9。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#625b54" stroke-width="1.8"/></marker></defs>
+<rect x="1" y="1" width="438" height="341" rx="9" fill="#fbf8f1" stroke="#c6b9a7"/>
+<text x="21" y="32" font-family="Segoe UI,Microsoft YaHei,PingFang SC,sans-serif" font-size="20" fill="#302b27" text-anchor="start" font-weight="600">后缀序列的三次合并</text>
+<text x="22" y="61" font-family="Segoe UI,Microsoft YaHei,PingFang SC,sans-serif" font-size="16" fill="#625b54" text-anchor="start">数值栈从左到右为栈底到栈顶。</text>
+<text x="24" y="91" font-family="Segoe UI,Microsoft YaHei,PingFang SC,sans-serif" font-size="16" fill="#625b54" text-anchor="start" font-weight="600">读到 +</text>
+<rect x="27" y="100" width="40" height="30" rx="4" fill="#fffdf8" stroke="#c6b9a7"/>
+<text x="47.0" y="121.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#302b27" text-anchor="middle" font-weight="600">2</text>
+<rect x="70" y="100" width="40" height="30" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="90.0" y="121.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">3</text>
+<rect x="113" y="100" width="40" height="30" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="133.0" y="121.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">4</text>
+<path d="M174 115 H218" fill="none" stroke="#625b54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="242" y="100" width="40" height="30" rx="4" fill="#fffdf8" stroke="#c6b9a7"/>
+<text x="262.0" y="121.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#302b27" text-anchor="middle" font-weight="600">2</text>
+<rect x="285" y="100" width="40" height="30" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="305.0" y="121.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">7</text>
+<text x="24" y="165" font-family="Segoe UI,Microsoft YaHei,PingFang SC,sans-serif" font-size="16" fill="#625b54" text-anchor="start" font-weight="600">读到 *</text>
+<rect x="27" y="174" width="40" height="30" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="47.0" y="195.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">2</text>
+<rect x="70" y="174" width="40" height="30" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="90.0" y="195.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">7</text>
+<path d="M174 189 H218" fill="none" stroke="#625b54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="242" y="174" width="40" height="30" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="262.0" y="195.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">14</text>
+<text x="24" y="239" font-family="Segoe UI,Microsoft YaHei,PingFang SC,sans-serif" font-size="16" fill="#625b54" text-anchor="start" font-weight="600">读到 −</text>
+<rect x="27" y="248" width="40" height="30" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="47.0" y="269.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">14</text>
+<rect x="70" y="248" width="40" height="30" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="90.0" y="269.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">5</text>
+<path d="M174 263 H218" fill="none" stroke="#625b54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="242" y="248" width="40" height="30" rx="4" fill="#f4e3d2" stroke="#934728"/>
+<text x="262.0" y="269.0" font-family="Cascadia Code,Consolas,monospace" font-size="19" fill="#934728" text-anchor="middle" font-weight="600">9</text>
+<text x="24" y="318" font-family="Segoe UI,Microsoft YaHei,PingFang SC,sans-serif" font-size="17" fill="#934728" text-anchor="start" font-weight="600">最后一步先取 5，再取 14，算 14 − 5。</text>
+</svg>
