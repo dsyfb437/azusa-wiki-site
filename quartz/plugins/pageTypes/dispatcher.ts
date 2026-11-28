@@ -183,6 +183,15 @@ export async function generateVirtualPages(
 ): Promise<VirtualEntry[]> {
   const cfg = ctx.cfg.configuration
   const virtualEntries: VirtualEntry[] = []
+  // An authored folder alias and a generated folder listing would both write index.html.
+  const folderAliases = new Set<FullSlug>()
+  if (ctx.cfg.plugins?.emitters?.some((emitter) => emitter.name === "AliasRedirects")) {
+    for (const [, file] of content) {
+      for (const alias of file.data.aliases ?? []) {
+        if (alias.endsWith("/index")) folderAliases.add(alias)
+      }
+    }
+  }
   let references: Map<SimpleSlug, FullSlug[]> | undefined
   for (const pt of pageTypes) {
     if (!pt.generate) continue
@@ -191,6 +200,7 @@ export async function generateVirtualPages(
     const fileBacked = (pt.fileExtensions?.length ?? 0) > 0
     for (const vp of virtualPages) {
       const vpSlug = vp.slug as FullSlug
+      if (pt.name === "FolderPage" && folderAliases.has(vpSlug)) continue
       const vpRelativePath = (vpSlug + ".md") as FilePath
       const [tree, vfile] = defaultProcessedContent({
         slug: vpSlug,

@@ -23,4 +23,10 @@ tags: [Git, 开发工具, 待核对]
 
 例如从当前提交运行 `git switch -c notes/git-workflow`，后续提交会移动新分支的指针。主分支可以继续接收别人的改动。打算合并时，GitHub 的 Pull Request 可以并列展示两条分支间的差异，协作者据此讨论、修改和合并。在本机创建分支和提交都属于 Git 的功能，托管、网页评审则由 GitHub 提供。
 
+[[远程项目的迁移与恢复验证|在另一台机器上恢复项目]]时，这三个位置的差别会再次出现。一次普通克隆可以取回远端分支已有的提交；本机暂存区的快照和工作区后来改过的段落，需要另行保存。
+
+## 出处
+
+命令例子从 GitHub Skills 学习记录《Git Learning Notes》整理。Scott Chacon 与 Ben Straub 的 *Pro Git* 第二版，第 2.2 节解释工作区与暂存区，第 3.1 节解释分支引用如何随提交移动。[记录更改](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) · [分支简介](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
+
 [计算机与工程](计算机与工程.md)

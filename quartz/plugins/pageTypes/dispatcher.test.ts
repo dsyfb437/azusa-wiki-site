@@ -250,6 +250,26 @@ describe("generateVirtualPages", () => {
     assert.strictEqual(ctx.virtualPages.length, 2)
   })
 
+  test("an explicit index alias takes precedence over its generated folder listing", async () => {
+    const guide = defaultProcessedContent({
+      slug: "notes/guide" as FullSlug,
+      aliases: ["notes/index" as FullSlug],
+    })
+    const folders = makePageType({
+      name: "FolderPage",
+      generate: () => [page("notes/index"), page("other/index")],
+    })
+    for (const enabled of [true, false]) {
+      const ctx = makeCtx()
+      Object.assign(ctx.cfg, { plugins: { emitters: enabled ? [{ name: "AliasRedirects" }] : [] } })
+      const entries = await generateVirtualPages([folders], [guide], ctx, { head: StubHead }, {})
+      assert.deepStrictEqual(
+        entries.map((entry) => entry.vpSlug),
+        enabled ? ["other/index"] : ["notes/index", "other/index"],
+      )
+    }
+  })
+
   test("keeps the 404 page out of ctx.virtualPages", async () => {
     const ctx = makeCtx()
     const entries = await generateVirtualPages(

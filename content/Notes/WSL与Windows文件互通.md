@@ -30,7 +30,9 @@ Windows 中可以通过下面的地址访问某个发行版：
 
 文件监听、大小写和权限行为可能因编辑器而异。多人协作或切换编辑器前，先用一个测试文件检查修改与刷新是否正常。不要绕过 WSL 共享路径，直接去修改虚拟磁盘内部文件。
 
+如果同一项目同时出现在 Windows 目录和发行版的主目录里，要先判断是同一份文件的两种访问路径，还是两个独立副本。[[远程项目的迁移与恢复验证]]里的样例构建可以用来核实究竟恢复了哪一份。
+
 ## 来源
 
-- [Microsoft：跨 Windows 与 Linux 文件系统工作](https://learn.microsoft.com/en-us/windows/wsl/filesystems)
+- Microsoft Learn 的 *Working across Windows and Linux file systems* 说明了项目的存放位置、从 Linux 打开资源管理器以及系统间的命令互操作。[Microsoft 原文](https://learn.microsoft.com/en-us/windows/wsl/filesystems)
 - [计算机与工程目录](计算机与工程.md)

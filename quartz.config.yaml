@@ -146,10 +146,7 @@ plugins:
       groupOptions:
         grow: true
   - source: "@quartz-community/backlinks"
-    enabled: true
-    layout:
-      position: right
-      priority: 50
+    enabled: false
   - source: "@quartz-community/article-title"
     enabled: true
     layout:
