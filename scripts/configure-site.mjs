@@ -14,7 +14,8 @@ Object.assign(config.configuration.theme.colors.lightMode,{light:'#fbfaf7',dark:
 Object.assign(config.configuration.theme.colors.darkMode,{light:'#1d1b25',dark:'#eeecf3',darkgray:'#c6c0d1',secondary:'#b5a0e0',tertiary:'#9e8bba',highlight:'rgba(181,160,224,0.11)'});
 for(const plugin of config.plugins){
   if(plugin.source.endsWith('/explicit-publish'))plugin.enabled=true;
-  if(['/og-image','/encrypted-pages','/canvas-page','/bases-page','/backlinks'].some(x=>plugin.source.endsWith(x)))plugin.enabled=false;
+  if(plugin.source.endsWith('/table-of-contents'))plugin.options={...plugin.options,maxDepth:6,minEntries:0};
+  if(['/og-image','/encrypted-pages','/canvas-page','/bases-page','/backlinks','/explorer'].some(x=>plugin.source.endsWith(x)))plugin.enabled=false;
   if(plugin.source.endsWith('/footer'))plugin.options={links:{'博客':'https://azusaaa.com/','Quartz':'https://quartz.jzhao.xyz/'}};
 }
 fs.writeFileSync('quartz.config.yaml',YAML.stringify(config));

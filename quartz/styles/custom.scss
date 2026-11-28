@@ -76,6 +76,16 @@ body {
   .toc, .explorer { font-size: 0.94rem; }
 }
 
+.home-navigation {
+  font-size: 0.94rem;
+  h2, summary { margin: 0; font-size: 1rem; font-weight: 600; }
+  summary { cursor: pointer; padding-block: 0.45rem; }
+  ul { list-style: none; padding: 0; margin: 0.4rem 0 0; }
+  a { display: block; width: fit-content; padding-block: 0.2rem; color: var(--darkgray); }
+  a:hover, a[aria-current="page"] { color: var(--tertiary); }
+  @media all and ($mobile) { flex-basis: 100%; }
+}
+
 .note-backlinks {
   margin-block: 0.5rem 2rem;
   h2 { margin: 0 0 0.65rem; font: 550 1.25rem/1.5 var(--headerFont); }
