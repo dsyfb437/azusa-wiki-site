@@ -10,8 +10,16 @@ Object.assign(config.configuration, {
 config.configuration.theme.fontOrigin='local';
 config.configuration.theme.cdnCaching=false;
 config.configuration.theme.typography={header:'Segoe UI',body:'Segoe UI',code:'Cascadia Code'};
-Object.assign(config.configuration.theme.colors.lightMode,{light:'#fbfaf7',dark:'#252431',darkgray:'#4f4c5c',secondary:'#7157ad',tertiary:'#8575a5',highlight:'rgba(113,87,173,0.09)'});
-Object.assign(config.configuration.theme.colors.darkMode,{light:'#1d1b25',dark:'#eeecf3',darkgray:'#c6c0d1',secondary:'#b5a0e0',tertiary:'#9e8bba',highlight:'rgba(181,160,224,0.11)'});
+Object.assign(config.configuration.theme.colors.lightMode, {
+  light: '#faf8f3', lightgray: '#dcd6cc', gray: '#766f67', darkgray: '#45403b',
+  dark: '#292520', secondary: '#563f35', tertiary: '#a55137',
+  highlight: 'rgba(154,76,49,0.08)', textHighlight: '#e6b38270',
+});
+Object.assign(config.configuration.theme.colors.darkMode, {
+  light: '#221f1c', lightgray: '#47403a', gray: '#a69d92', darkgray: '#dcd5c9',
+  dark: '#f5eee5', secondary: '#e6cbb9', tertiary: '#eea184',
+  highlight: 'rgba(232,157,127,0.11)', textHighlight: '#98614680',
+});
 for(const plugin of config.plugins){
   if(plugin.source.endsWith('/explicit-publish'))plugin.enabled=true;
   if(plugin.source.endsWith('/table-of-contents'))plugin.options={...plugin.options,maxDepth:6,minEntries:0};
